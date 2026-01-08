@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SERCOV - Seguridad Electrónica y Redes</title>
     <link rel="stylesheet" href="style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=TU_ID_AQUI"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'TU_ID_AQUI');
+
+      // Función para registrar el clic en analíticas antes de ir a WhatsApp
+      function registrarContacto() {
+        gtag('event', 'click_whatsapp', {
+          'event_category': 'contacto',
+          'event_label': 'WhatsApp SERCOV'
+        });
+      }
+    </script>
 </head>
 <body>
 
@@ -15,7 +31,7 @@
                 <ul>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="https://wa.me/526626682758?text=Hola%20SERCOV,%20necesito%20información." target="_blank" onclick="registrarContacto()">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -25,7 +41,12 @@
         <div class="hero-content">
             <h1>Expertos en Seguridad Electrónica</h1>
             <p>Protegiendo a Hermosillo desde 2004.</p>
-            <a href="#contacto" class="btn">Solicitar Cotización</a>
+            <a href="https://wa.me/526626682758?text=Hola%20SERCOV,%20me%20gustaría%20solicitar%20una%20cotización." 
+               class="btn" 
+               target="_blank" 
+               onclick="registrarContacto()">
+               Solicitar Cotización
+            </a>
         </div>
     </section>
 
