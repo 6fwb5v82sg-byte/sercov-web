@@ -107,4 +107,46 @@ footer {
     text-align: center;
     padding: 2rem 0;
     margin-top: 3rem;
+
 }
+/* Estilos para el Botón Flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366; /* Verde oficial de WhatsApp */
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
+}
+
+/* Ajuste para que en celulares no estorbe tanto */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    .whatsapp-float img {
+        width: 30px;
+        height: 30px;
+    }
