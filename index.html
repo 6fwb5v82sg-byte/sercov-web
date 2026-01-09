@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SERCOV - Seguridad Electrónica y Redes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=TU_ID_AQUI"></script>
@@ -13,7 +14,6 @@
       gtag('js', new Date());
       gtag('config', 'TU_ID_AQUI');
 
-      // Función para registrar el clic en analíticas antes de ir a WhatsApp
       function registrarContacto() {
         gtag('event', 'click_whatsapp', {
           'event_category': 'contacto',
@@ -54,22 +54,27 @@
         <h2 class="section-title">Nuestros Servicios</h2>
         <div class="services-grid">
             <div class="service-card">
+                <i class="fas fa-network-wired service-icon"></i>
                 <h3>Redes y Routers</h3>
                 <p>Configuración y optimización de conectividad de alta velocidad.</p>
             </div>
             <div class="service-card">
+                <i class="fas fa-video service-icon"></i>
                 <h3>CCTV</h3>
                 <p>Sistemas de videovigilancia avanzados para hogar y empresa.</p>
             </div>
             <div class="service-card">
+                <i class="fas fa-shield-alt service-icon"></i>
                 <h3>Firewalls y Seguridad</h3>
                 <p>Protección contra amenazas digitales y control de accesos.</p>
             </div>
             <div class="service-card">
+                <i class="fas fa-project-diagram service-icon"></i>
                 <h3>Cableado Estructurado</h3>
                 <p>Instalación profesional de infraestructura de red.</p>
             </div>
             <div class="service-card">
+                <i class="fas fa-tools service-icon"></i>
                 <h3>Soporte Técnico</h3>
                 <p>Reparación de computadoras y mantenimiento preventivo.</p>
             </div>
@@ -77,15 +82,57 @@
     </section>
 
     <section id="nosotros">
-        <div class="container">
-            <h2>Nuestra Trayectoria</h2>
-            <p>Fundada en Hermosillo, Sonora, SERCOV ha brindado soluciones tecnológicas por más de 20 años, especializándose en la integración de sistemas de seguridad y redes robustas.</p>
+        <div class="container nosotros-flex">
+            <div class="nosotros-text">
+                <h2 class="section-title" style="text-align: left; margin-top: 0;">Nuestra Trayectoria</h2>
+                <p>Fundada en Hermosillo, Sonora, <strong>SERCOV</strong> ha brindado soluciones tecnológicas por más de 20 años.</p>
+                <p>Especialistas en la integración de sistemas de seguridad y redes robustas para la industria y el hogar.</p>
+                <ul class="nosotros-list">
+                    <li><i class="fas fa-check-circle"></i> Más de 20 años de experiencia.</li>
+                    <li><i class="fas fa-check-circle"></i> Soporte técnico certificado.</li>
+                    <li><i class="fas fa-check-circle"></i> Tecnología de última generación.</li>
+                </ul>
+            </div>
+            <div class="nosotros-image">
+                <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80" alt="Tecnología SERCOV">
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto-form" class="container">
+        <h2 class="section-title">Solicita una Visita Técnica</h2>
+        <div class="form-container">
+            <form action="#">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="servicio">Servicio de Interés</label>
+                    <select id="servicio" name="servicio">
+                        <option value="cctv">CCTV / Vigilancia</option>
+                        <option value="redes">Redes y Routers</option>
+                        <option value="seguridad">Firewalls / Seguridad</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 SERCOV - Seguridad Electrónica y Redes. Hermosillo, Sonora, México.</p>
     </footer>
+
     <a href="https://wa.me/526626682758?text=Hola%20SERCOV,%20vi%20su%20página%20web%20y%20tengo%20una%20consulta." 
        class="whatsapp-float" 
        target="_blank" 
@@ -95,5 +142,6 @@
 
 </body>
 </html>
+
 
 
