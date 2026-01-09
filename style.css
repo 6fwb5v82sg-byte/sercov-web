@@ -1,4 +1,4 @@
-/* Paleta de colores basada en el logo: Azul oscuro, Negro y Plata */
+/* Paleta de colores basada en el logo */
 :root {
     --dark-blue: #0b1a25;
     --accent-blue: #1b2d3b;
@@ -11,7 +11,7 @@ body {
     margin: 0;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #f4f7f9;
 }
 
 .container {
@@ -26,7 +26,7 @@ header {
     background: var(--dark-blue);
     color: var(--white);
     padding: 1rem 0;
-    border-bottom: 2px solid var(--silver);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -40,18 +40,29 @@ header .container {
 
 .logo {
     height: 80px;
+    transition: transform 0.3s ease;
 }
+
+.logo:hover { transform: scale(1.05); }
 
 nav ul {
     display: flex;
     list-style: none;
+    gap: 10px;
 }
 
 nav ul li a {
     color: var(--white);
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--accent-blue);
+    color: var(--silver);
 }
 
 /* Sección Hero */
@@ -76,82 +87,113 @@ nav ul li a {
     border-radius: 5px;
     font-weight: bold;
     margin-top: 1rem;
+    transition: 0.3s;
 }
+
+.btn:hover { background: var(--white); }
 
 /* Servicios Grid */
 .section-title {
     text-align: center;
-    margin: 3rem 0;
+    margin: 4rem 0 2rem;
+    color: var(--dark-blue);
+    font-size: 2rem;
+    text-transform: uppercase;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
 }
 
 .service-card {
     background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-top: 5px solid var(--dark-blue);
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-top: 6px solid var(--silver);
     text-align: center;
+    transition: all 0.4s ease;
 }
 
-/* Footer */
-footer {
-    background: var(--dark-blue);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(11, 26, 37, 0.15);
+    border-top-color: var(--dark-blue);
 }
-/* Estilos para el Botón Flotante de WhatsApp */
-.whatsapp-float {
-    position: fixed !important; /* Forzamos la posición fija */
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50%;
-    display: flex !important; /* Usamos flex para centrar el logo */
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--dark-blue);
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Nosotros */
+.nosotros-flex {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
-    z-index: 999999 !important; /* Máxima prioridad sobre cualquier capa */
-    transition: all 0.3s ease;
-    text-decoration: none;
+    gap: 4rem;
+    padding: 4rem 0;
 }
 
-.whatsapp-float img {
-    width: 35px;
-    height: 35px;
-    display: block;
+.nosotros-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 20px 20px 0px var(--silver);
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #128c7e;
-    box-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+.nosotros-list { list-style: none; padding: 0; margin-top: 1.5rem; }
+.nosotros-list li { margin-bottom: 10px; font-weight: bold; color: var(--dark-blue); }
+.nosotros-list i { color: #25d366; margin-right: 10px; }
+
+/* Formulario */
+.form-container {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Ajuste para que en celulares no estorbe tanto */
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;
+}
+
+.btn-submit {
+    width: 100%; background: var(--dark-blue); color: var(--white);
+    padding: 15px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;
+}
+
+/* Footer y WhatsApp */
+footer { background: var(--dark-blue); color: var(--white); text-align: center; padding: 2rem 0; }
+
+.whatsapp-float {
+    position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+    background-color: #25d366; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; z-index: 1000;
+}
+
+.whatsapp-float img { width: 35px; }
+
+/* Responsive */
 @media (max-width: 768px) {
-    .whatsapp-float {
-        bottom: 20px !important;
-        right: 20px !important;
-        width: 55px;
-        height: 55px;
-    }
-    .whatsapp-float img {
-        width: 30px;
-        height: 30px;
-    }
-} /* <--- Esta es la llave que faltaba para cerrar el @media */
+    header .container { flex-direction: column; gap: 1rem; }
+    .logo { height: 60px; }
+    nav ul { justify-content: center; }
+    .nosotros-flex { flex-direction: column; text-align: center; }
+    .nosotros-image { order: -1; }
+    #hero { height: 50vh; }
+    .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+}
 
 
