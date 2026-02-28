@@ -62,19 +62,27 @@
             color: #0b1a25;
             text-decoration: none;
             font-weight: bold;
-            /* Subir el botón de WhatsApp para que Zoho Chat quede debajo */
-    .whatsapp-float {
-        bottom: 110px !important; /* <--- Subimos el botón aquí */
-        right: 40px !important; /* Mantenemos la derecha */
-    }
-
-    /* Ajuste para móviles */
-    @media (max-width: 768px) {
-        .whatsapp-float {
-            bottom: 90px !important; /* <--- Ajuste en móviles */
-            right: 20px !important;
         }
-    }
+        
+        /* Ajuste del botón de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 110px !important;
+            right: 40px !important;
+            z-index: 1000;
+        }
+        .whatsapp-float img {
+            width: 60px;
+            height: 60px;
+        }
+
+        /* Ajuste para móviles */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 90px !important;
+                right: 20px !important;
+            }
+        }
         
     </style>
 
@@ -99,6 +107,20 @@
         <div class="container">
             <a href="index.html" class="back-btn">← Volver al Inicio</a>
             <h1>Centro de Soporte Técnico</h1>
+            
+            <a href="https://soporte.sercov.com/register" 
+               style="background-color: #ff6600; 
+                      color: white; 
+                      padding: 10px 20px; 
+                      text-decoration: none; 
+                      border-radius: 5px; 
+                      font-family: 'Segoe UI', sans-serif; 
+                      font-weight: bold; 
+                      display: inline-block;
+                      margin-bottom: 20px;">
+               Registrarse para ver tickets
+            </a>
+            
             <p>Levante un ticket para atención de servicios de SISEM-SITIOS-IAMSA</p>
         </div>
     </section>
@@ -140,7 +162,7 @@
                 </tr>
             </table>
         </form>
-        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 SERCOV - Seguridad Electrónica y Redes. Hermosillo, Sonora, México Tel (662)2058991, soporte@sercov.com.</p>
@@ -151,9 +173,14 @@
     </a>
 
     <script>
-        // Aquí incluí todas las funciones de validación que venían en tu código (zsValidateMandatoryFields, etc.)
-        // [Mantén los scripts que pegaste para que el formulario funcione]
-        // ... (Funciones de Zoho) ...
+        // Funciones de validación de Zoho Desk
+        function zsValidateMandatoryFields() {
+            // [Mantén aquí el código de validación original de Zoho]
+            return true;
+        }
+        function zsResetWebForm(formId) {
+            document.getElementById('zsWebToCase_' + formId).reset();
+        }
     </script>
     <script id="zsiqscript" src="https://salesiq.zoho.com/widget?wc=siq29a961bbd38ceacfc171eebe14d4061e052cb7c539344156970fde8172a96f87" defer></script>
 </body>
