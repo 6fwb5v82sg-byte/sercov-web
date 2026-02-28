@@ -62,6 +62,19 @@
             color: #0b1a25;
             text-decoration: none;
             font-weight: bold;
+            /* Subir el botón de WhatsApp para que Zoho Chat quede debajo */
+    .whatsapp-float {
+        bottom: 110px !important; /* <--- Subimos el botón aquí */
+        right: 40px !important; /* Mantenemos la derecha */
+    }
+
+    /* Ajuste para móviles */
+    @media (max-width: 768px) {
+        .whatsapp-float {
+            bottom: 90px !important; /* <--- Ajuste en móviles */
+            right: 20px !important;
+        }
+    }
         }
     </style>
 
